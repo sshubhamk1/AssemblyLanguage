@@ -1,0 +1,22 @@
+;making a string using bits
+
+
+global _start
+
+section .text
+
+_start:
+	mov eax , 0x4
+	mov ebx , 0x1
+	mov ecx , var1
+	mov edx , mlen
+	int 0x80
+	
+
+	mov eax , 0x1
+	mov ebx , 0x8
+	int 0x80
+
+section .data
+	var1: db 0x61, 0x62, 0x63,0x64,0x65,0x0A, 0x00
+	mlen equ 7
